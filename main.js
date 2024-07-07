@@ -1,5 +1,6 @@
 import {scaleFactor} from "./constant";
 import{k} from "./kaboomCtx";
+import { displayDialogue } from "./utils";
 
 k.loadSprite("spritesheet", "./spritesheet.png",{
     sliceX : 39,
@@ -55,9 +56,13 @@ for (const layer of layers){
                 if (obj.name){
                     player.onCollide(obj.name, () => {
                         player.isInDialogue = true;
+                        displayDialogue("TODO", () => {
+                            player.isInDialogue = false;
+                        });
                 });
             }
          }
+         continue;
         }
     } 
 
