@@ -1,5 +1,7 @@
 import kaboom from "kaboom";
 
 export const k = kaboom({
-    global: true,
+    global: false,
+    touchToMouse: true,
+    canvas: document.getElementById("game"),
 });
